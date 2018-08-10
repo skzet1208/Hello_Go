@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  app:
+    image: golang:latest
+    volumes:
+      - "./app:/go/src/app"
+    ports:
+      - "8080:80"
+    command: "go run ./src/app/main.go"
+
+volumes:
+  data:
+    driver: "local"
